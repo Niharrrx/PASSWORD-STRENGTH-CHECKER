@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #0f0c29;
+    --primary-color: #24243e;
+    --secondary-color: #302b63;
+    --text-color: #f0f0f0;
+    --weak-color: #e74c3c;
+    --medium-color: #f39c12;
+    --strong-color: #2ecc71;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--bg-color), var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+    font-weight: 300;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+#password-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#password-input:focus {
+    border-color: #7b2cbf;
+    box-shadow: 0 0 15px rgba(123, 44, 191, 0.5);
+}
+
+#toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; /* Prevents text selection */
+}
+
+.strength-meter {
+    height: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+/* Strength Bar Colors */
+.strength-bar.weak { background-color: var(--weak-color); }
+.strength-bar.medium { background-color: var(--medium-color); }
+.strength-bar.strong { background-color: var(--strong-color); }
+
+#feedback-text {
+    text-align: center;
+    font-weight: 600;
+    height: 20px; /* Reserve space to prevent layout shift */
+    transition: color 0.5s ease;
+}
+
+.suggestions {
+    margin-top: 1.5rem;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.suggestions p {
+    margin: 0.5rem 0;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.suggestions .icon {
+    margin-right: 10px;
+}
+
+/* Checklist Styling */
+.suggestions p.invalid { color: #b0b0b0; }
+.suggestions p.valid { color: var(--strong-color); text-decoration: line-through; }
+.suggestions p.valid .icon::before { content: '✔'; }
+.suggestions p.invalid .icon::before { content: '✖'; }

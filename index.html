@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Password Strength Estimator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Checker</h1>
+        <p class="subtitle">Enter a password to see how secure it is.</p>
+
+        <div class="input-wrapper">
+            <input type="password" id="password-input" placeholder="Your password here...">
+            <span id="toggle-password">👁️</span>
+        </div>
+        
+        <div class="strength-meter">
+            <div class="strength-bar" id="strength-bar"></div>
+        </div>
+        
+        <p id="feedback-text"></p>
+
+        <div id="suggestions" class="suggestions">
+            <p id="length-check"><span class="icon"></span> At least 8 characters</p>
+            <p id="lowercase-check"><span class="icon"></span> Contains a lowercase letter</p>
+            <p id="uppercase-check"><span class="icon"></span> Contains an uppercase letter</p>
+            <p id="number-check"><span class="icon"></span> Contains a number</p>
+            <p id="special-check"><span class="icon"></span> Contains a special character</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
